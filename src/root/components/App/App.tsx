@@ -6,23 +6,28 @@ import AppRoutes from '../AppRoutes/AppRoutes'
 import Notifier from '../../../common/components/Notifer/Notifer'
 
 const useStyle=makeStyles((theme)=>({
-    main:{
-        width:"100%",
-        height:"80px",
-        backgroundColor:'green'
-
+    app:{
+        display:'flex',
+        flex:1
     },
     container:{
+  overflow:'auto',
+  minHeight:'100vh'
+    },
+    main:{
         width:"100%",
-        height:"500px",
-        backgroundColor:'white'
-
+        height:"100%",
+        backgroundColor:theme.palette.common.white,
+        overflowX:'auto',
+        overflowY:'hidden'
 
     },
     footer:{
         width:"100%",
-        height:"80px",
-        backgroundColor:'yellow'
+        height:"64px",
+        backgroundColor:theme.palette.primary.dark,
+        bottom:0,
+        zIndex:9999
     }
 }))
 
@@ -31,7 +36,7 @@ function App():JSX.Element {
 const styles=useStyle()
 
     return (
-<div>
+<div className={styles.app} >
     <Router>
         <main className={styles.main}>
             <MainLayout />
